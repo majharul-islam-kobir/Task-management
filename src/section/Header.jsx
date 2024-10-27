@@ -6,9 +6,14 @@ import { useEffect, useState } from "react";
 
 
 function Header() {
-let [theme , setThem] = useState (false);
+let [theme , setTheme] = useState (localStorage.getItem('darkTheme')==('true'));
+let themeHandler = () => {
+  setTheme(!theme)
+  localStorage.setItem('darkTheme' , `${!theme}`)
+}
+
 useEffect( () => {
-  if (theme){
+  if (localStorage.getItem('darkTheme')==('true')){
     document.documentElement.classList.add('dark')
   }else{
     document.documentElement.classList.remove('dark')
@@ -20,7 +25,7 @@ useEffect( () => {
         <Container className="flex justify-between items-center">
         
             <img className="brightness-200" src={logo} alt="brand-logo" />
-            <MdOutlineLightMode onClick={() => setThem(!theme)} className= {`text-4xl ${theme && 'text-white' }`}/>
+            <MdOutlineLightMode onClick={themeHandler} className= {`text-4xl ${!theme || 'text-white' }`}/>
             
         </Container>
     </div>
