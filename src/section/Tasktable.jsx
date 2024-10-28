@@ -48,7 +48,7 @@ let createHendeler = (item) => {
         <Button className=" px-2 py-1 text-base" onClick={() =>  setTasks([])}  color="failure">Clear Tasks</Button>
         </div> 
 
-        <TableHeader />
+        <TableHeader className="mx-3"/>
 
         <div className="overflow-x-auto">
       <Table>
