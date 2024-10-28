@@ -2,7 +2,7 @@
 
 function Container(props) {
   return (
-    <div className={`max-w-screen-lg m-auto px-2 ${props.className}`}>{props.children}</div>
+    <div className={`w-11/12 m-auto px-2 ${props.className}`}>{props.children}</div>
   )
 }
 
